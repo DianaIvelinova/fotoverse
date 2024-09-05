@@ -31,17 +31,17 @@ export default function Header() {
     );
     setModalContent(content);
   }
+  /*<div className='d-flex flex-column header border'>*/
 
   return (
     <div>
-      <div className='d-flex flex-column header border'>
+        <div className='d-flex flex-column header border'>
           <Navbar.Brand href="/"><img className='logo' alt='' src='./logo.svg'/></Navbar.Brand>
           <div className='mt-4'>
-            <Nav className='mb-4'><img className='headerIcon me-1' alt='' src='./home.svg'/><Nav.Link href="/home">Home</Nav.Link></Nav>
-            <Nav className='mb-4'><img className='headerIcon search' alt='' src='./search.svg'/><Nav.Link href="#search">Search</Nav.Link></Nav>
+            <Nav className='mb-4'><img className='headerIcon' alt='' src='./home.svg'/><Nav.Link href="/home">Home</Nav.Link></Nav>
             <Nav className='mb-4'><img className='headerIcon search' alt='' src='./create.svg'/><Nav.Link onClick={handleAlbumInfoModal}>Upload</Nav.Link></Nav>
-            <Nav className='mb-4'><img className='headerIcon ms-1' alt='' src='./icon.svg'/><Nav.Link href={`${user?.uid}`}>Profile</Nav.Link></Nav>
-            <Nav className='mb-4'><img className='headerIcon ms-1' alt='' src='./logout.svg'/><Nav.Link onClick={logout}>Logout</Nav.Link></Nav>
+            <Nav className='mb-4'><img className='headerIcon' alt='' src='./icon.svg'/><Nav.Link href={`${user?.uid}`}>Profile</Nav.Link></Nav>
+            <Nav className='mb-4'><img className='headerIcon' alt='' src='./logout.svg'/><Nav.Link onClick={logout}>Logout</Nav.Link></Nav>
           </div>
       </div>
       {modal()}

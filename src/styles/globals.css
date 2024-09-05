@@ -110,6 +110,11 @@ a {
   color: #000 !important;
 }
 
+.center {
+  width: 50%;
+  margin: 0 auto; 
+}
+
 .logo {
   width: 100px;
   height: 51px;
@@ -136,13 +141,29 @@ a {
   border: none;
   margin: 10px 100px 50px 50px
 }
+.feedSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  padding: 1rem;
+}
 
 .friendsPfp {
   width: 50px;
   height: 50px;
   background-color: white;
   border: none;
-  margin: 10px 100px 50px 50px
+  margin: 25px
+}
+
+.feedPics {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 1.5rem;
+  overflow: hidden; /* Crop overflow to ensure the picture fits the container */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 .border {
@@ -199,4 +220,5 @@ a {
   height: 250px;
   object-fit: cover;
 }
+
 
