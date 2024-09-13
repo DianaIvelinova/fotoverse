@@ -17,11 +17,7 @@ const profile = () => {
 
     return (
       <>
-        <div className="d-flex">
-          <div className="position-fixed">
-
-          </div>
-          <div className="h-100" id="main">
+        <div className="d-flex justify-content-center">
             <div className="d-flex flex-column ">
               <UserSection />
               <div className="ps-5 pe-5 pb-5 gallery">
@@ -31,7 +27,6 @@ const profile = () => {
               </div>
               <Footer />
             </div>
-          </div>
         </div>
       </>
     );
