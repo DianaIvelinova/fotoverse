@@ -1,11 +1,10 @@
 import UserSection from "@fotoverse/components/UserSection";
 import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import Footer from "@fotoverse/components/Footer";
 import usePhoto from "@fotoverse/hooks/usePhoto";
 import { useUser } from "@fotoverse/hooks/useUser";
 
-const profile = () => {
+const Profile = () => {
   const { user } = useUser();
   const { getImagesFromStorage, imageUrls } = usePhoto();
 
@@ -25,12 +24,11 @@ const profile = () => {
                   <img key={url} src={url} alt="Image" />
                 ))}
               </div>
-              <Footer />
             </div>
         </div>
       </>
     );
   }
 
-export default profile
+export default Profile
 

@@ -1,14 +1,11 @@
 import { Navbar,Nav,Button,Modal } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.css";
 import { useRouter } from 'next/router';
-import useModal from '@fotoverse/hooks/useModal';
-import usePhoto from '@fotoverse/hooks/usePhoto';
 import { useUser, userSignOut } from '@fotoverse/hooks/useUser';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Header() {
-  const { modal, setModalContent } = useModal();
-  const { selectedImgRef, uploadImg, handleImgChange } = usePhoto();
   const { user } = useUser();
   const router = useRouter();
 
@@ -19,43 +16,28 @@ export default function Header() {
     router.push("/");
   };
 
-  function handleAlbumInfoModal() {
-    let content = (
-      <>
-        <div>
-          <input
-            type="file"
-            className="ms-3"
-            ref={selectedImgRef}
-            onChange={handleImgChange}
-          />
-        </div>
-        <Modal.Footer className="border-0">
-          <Button variant="secondary" onClick={uploadImg}>
-            Upload
-          </Button>
-        </Modal.Footer>
-      </>
-    );
-    setModalContent(content);
-  }
-
   return (
     <div >
     <header>
-        <div className="heart-container">
-            <div className="logo">
-                <h1>MyBrand</h1>
+        <div className='d-flex justify-content-between align-items-center'>
+            <Link href="${user?.uid}" className="m-2 gradient-text">
+                <h1>fotoverse</h1>
+            </Link>
+            <div>
+              <div className='header_copyright'>diyana ivanova © 2024</div>
             </div>
-            <nav className="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <Nav className="nav-links">
+              <Nav.Link className='nav-item' href="/home">
+                <Image alt="" width={25} height={25} src="./home.svg" />
+                <span className="nav-text">Feed</span>
+              </Nav.Link>
+              <Nav.Link className='nav-item p-2 me-2' onClick={logout}>
+                <Image alt="" width={20} height={20} src="./logout.svg" />
+                <span className="nav-text">Logout</span>
+              </Nav.Link>
+            </Nav>
         </div>
     </header>
-      {modal()}
     </div>
   );
 }

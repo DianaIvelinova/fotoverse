@@ -1,5 +1,4 @@
 import { Container, Button, Form } from "react-bootstrap"
-import Footer from "../components/Footer"
 import Link from "next/link"
 import { createUserWithEmailAndPassword,updateProfile,getIdToken } from "firebase/auth"
 import { useState } from "react"
@@ -45,24 +44,23 @@ export default function signUp() {
             <form onSubmit={signUp}>
                 <Container className="d-flex justify-content-center align-items-center vh-100">
                     <div className="d-flex flex-column justify-content-center align-items-center w-25 border">
-                        <img className='logoLogin p-1 mt-4 mb-2 d-flex' alt='' src='./logo.svg'/>
-                        <div className="signUpText">Sign up to see photos from your friends.</div>
-                        <div className="w-75">
-                            <Form.Control className="mb-1" type="email" placeholder="Email"
-                            value={email} onChange={(event) => { setEmail(event.target.value)}}/>
-                            <Form.Control className="mb-1" type="text" placeholder="Username" 
-                                value={username} onChange={(event) => { setUsername(event.target.value)}}/>
-                            <Form.Control className="mb-3" type="password" placeholder="Password" 
-                                value={pass} onChange={(event) => { setPass(event.target.value)}}/>
-                            {error && <div className="alert alert-danger">{error}</div>}
-                            <Button type="submit" className="w-100" variant="primary">Sign up</Button>
+                      <div className="m-2 gradient-text"><h1>fotoverse</h1></div>
+                      <div className="signUpText">Sign up to see photos from your friends.</div>
+                      <div className="w-75">
+                        <Form.Control className="mb-1" type="email" placeholder="Email"
+                          value={email} onChange={(event) => { setEmail(event.target.value)}}/>
+                        <Form.Control className="mb-1" type="text" placeholder="Username" 
+                          value={username} onChange={(event) => { setUsername(event.target.value)}}/>
+                        <Form.Control className="mb-3" type="password" placeholder="Password" 
+                          value={pass} onChange={(event) => { setPass(event.target.value)}}/>
+                          {error && <div className="alert alert-danger">{error}</div>}
+                          <Button type="submit" className="w-100" variant="primary">Sign up</Button>
                         </div>
-                            <div className="mt-3" style={{color: "gray"}}> OR </div>
-                            <div className="mt-3 mb-4">Already have an account? <Link href="./">Log in</Link></div>
+                        <div className="mt-3" style={{color: "gray"}}> OR </div>
+                        <div className="mt-3 mb-4">Already have an account? <Link href="./">Log in</Link></div>
                     </div>
                 </Container>
             </form>
-            <Footer/>
         </div>
     )
 }
